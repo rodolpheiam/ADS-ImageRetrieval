@@ -3,7 +3,7 @@ import glob, math
 
 def main():
     feature_file = open('color_feature.txt', 'w')
-    feature_file.write('tech nmos' + '\n')
+    feature_file.write('tech histogram' + '\n')
     feature_file.write('<< polysilicon >>' + '\n')
     image_list_file = open('imagelist.txt', 'w')
     for filename in glob.glob('image/*.JPEG'):
@@ -20,17 +20,12 @@ def get_feature(dimension, filename):
 def divide_histogram(dimension, histogram):
     full_length = len(histogram)
     part_length = int(math.ceil(full_length / float(dimension)))
-    hg = []
-    for i in xrange(0,full_length, part_length):
-        hg.append(sum(histogram[i:i+part_length]))
-    hg = equalize_histogram(hg)
-    return hg
+    hg = [sum(histogram[i : i+part_length]) for i in xrange(0, full_length, part_length)]
+    return equalize_histogram(hg)
 
 def equalize_histogram(histogram):
-    rate = float(sum(histogram)) / 500000
-    hg = []
-    for i in histogram:
-        hg.append(int(i / rate))
+    rate = sum(histogram) / 10000.0
+    hg = [int(i / rate) for i in histogram]
     return hg
 
 if __name__ == '__main__':
