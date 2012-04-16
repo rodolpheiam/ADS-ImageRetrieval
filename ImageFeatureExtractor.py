@@ -15,9 +15,9 @@ def main():
 def get_feature(dimension, filename):
     im = Image.open(filename)
     hg = im.histogram()
-    return divide_histogram(dimension, hg)
+    return merge_histogram(dimension, hg)
 
-def divide_histogram(dimension, histogram):
+def merge_histogram(dimension, histogram):
     full_length = len(histogram)
     part_length = int(math.ceil(full_length / float(dimension)))
     hg = [sum(histogram[i : i+part_length]) for i in xrange(0, full_length, part_length)]
