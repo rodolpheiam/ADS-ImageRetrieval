@@ -1,5 +1,5 @@
 from rtree import index
-import random
+import random, sys
 
 def query(idx, dimension, queries):
 	visits = idx.visits()
@@ -19,7 +19,7 @@ def process(dimension, queries):
 		idx.insert(i, tuple(int(f) for f in features[i].split(' ')[1:]))
 	return result
 
-if __name__ == '__main__':
+def histogram():
 	output = open('problem1', 'w')
 	r = [process(i, 5000) for i in xrange(4, 24, 4)]
 	for i in xrange(28):
@@ -27,3 +27,15 @@ if __name__ == '__main__':
 		for j in xrange(5):
 			output.write(' %d' % r[j][i])
 		output.write('\n')
+
+def moment():
+	output = open('problem2', 'w')
+	r = process(9, 5000)
+	for i in xrange(28):
+		output.write('%d %d\n' % ((i + 1) * 200, r[i]))
+
+if __name__ == '__main__':
+	if sys.argv[1] == 'histogram':
+		histogram()
+	elif sys.argv[1] == 'moment':
+		moment()
