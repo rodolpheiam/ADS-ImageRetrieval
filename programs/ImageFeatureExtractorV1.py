@@ -5,11 +5,11 @@ def generate_feature(dimension):
     feature_file = open('color_feature_%d.txt' % dimension, 'w')
     feature_file.write('tech histogram' + '\n')
     feature_file.write('<< polysilicon >>' + '\n')
-    #image_list_file = open('imagelist.txt', 'w')
+    image_list_file = open('imagelist_%d.txt' % dimension, 'w')
     for filename in glob.glob('image/*.JPEG'):
         hg = get_feature(dimension, filename)
         feature_file.write('rect ' + str.join(' ', [str(i) for i in hg]) + '\n')
-        #image_list_file.write(filename[6:] + '\n')
+        image_list_file.write(filename[6:] + '\n')
     feature_file.write('<< end >>')
 
 def get_feature(dimension, filename):

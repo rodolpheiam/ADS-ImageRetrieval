@@ -13,6 +13,6 @@ for i in xrange(6):
     plt.bar(x, y[i], 1.2, color=COLOR[i], label=LABEL[i])
 plt.xticks(np.arange(7.6, 100, 10), (10, 20, 30, 40, 50, 60, 70, 80, 90, 100))
 plt.legend()
-plt.xlabel('Number of neighbors')
-plt.ylabel('Correctness rate')
+plt.xlabel('Number of neighbors in query')
+plt.ylabel('Correctness rate(%)')
 plt.show()
