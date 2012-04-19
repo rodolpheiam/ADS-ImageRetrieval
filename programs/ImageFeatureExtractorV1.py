@@ -20,7 +20,7 @@ def get_feature(dimension, filename):
 def merge_histogram(dimension, histogram):
     full_length = len(histogram)
     part_length = int(math.ceil(full_length / float(dimension)))
-    hg = [sum(histogram[i : i+part_length]) for i in xrange(0, full_length, part_length)]
+    hg = [sum(histogram[i : i + part_length]) for i in xrange(0, full_length, part_length)]
     return equalize_histogram(hg)
 
 def equalize_histogram(histogram):
