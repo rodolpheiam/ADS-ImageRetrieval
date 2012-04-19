@@ -8,4 +8,4 @@ all: sigproc-sp.pdf
 	evince sigproc-sp.pdf > /dev/null &
 
 clean:
-	rm -f *.aux *.log *.out
+	rm -f *.aux *.log *.out *.bbl *.blg
