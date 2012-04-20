@@ -29,8 +29,4 @@ def equalize_histogram(histogram):
     return hg
 
 if __name__ == '__main__':
-    generate_feature(4)
-    generate_feature(8)
     generate_feature(12)
-    generate_feature(16)
-    generate_feature(20)
