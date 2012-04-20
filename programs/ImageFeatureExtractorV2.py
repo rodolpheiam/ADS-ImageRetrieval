@@ -31,9 +31,5 @@ def equalize_histogram(histogram):
     return histogram
 
 if __name__ == '__main__':
-    generate_feature(1, 2, 2)
-    generate_feature(2, 2, 2)
-    generate_feature(2, 2, 3)
-    generate_feature(2, 2, 4)
-    generate_feature(2, 2, 5)
+    generate_feature(4, 4, 4)
 
