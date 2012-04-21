@@ -1,6 +1,17 @@
-INSTALLATION
+REQUIREMENT
 ========================================================================
+Three packages are required:
+- PIL
+- libspatialindex
+- Rtree
 
+PIL can be downloaded from http://effbot.org/downloads/Imaging-1.1.7.tar.gz.
+Please follow the installation guide carefully (remember to install 
+libjpeg first according to the guide).
+
+libspatialindex and Rtree is located at */experiment1/libs/*, due to 
+modification has been made. To install these two libraries, please follow 
+the installation instruction inside the package.
 
 
 USAGE
