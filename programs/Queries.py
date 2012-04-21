@@ -50,31 +50,31 @@ def relevance(feature, imagelist, dimension, times, num):
 
 
 def histogram():
-	output = open('../data/problem1', 'w')
-	r = [process('../data/color_feature_%d.txt' % i, i) for i in xrange(4, 24, 4)]
+	output = open('problem1', 'w')
+	r = [process('color_feature_%d.txt' % i, i) for i in (4, 8, 12, 16, 20, 27, 64)]
 	for i in xrange(28):
 		output.write('%d' % ((i + 1) * 200))
-		for j in xrange(5):
+		for j in xrange(7):
 			output.write(' %d' % r[j][i])
 		output.write('\n')
 
 
 def moment():
-	output = open('../data/problem2', 'w')
-	r = process('../data/color_feature_9.txt', 9)
+	output = open('problem2', 'w')
+	r = process('color_feature_9.txt', 9)
 	for i in xrange(28):
 		output.write('%d %d\n' % ((i + 1) * 200, r[i]))
 
 
 def main():
 	if sys.argv[1] == 'relevance':
-		output = open('../data/problem3', 'w')
-		for i in xrange(4, 24, 4):
+		output = open('problem3', 'w')
+		for i in (4, 8, 12, 16, 20, 27, 64):
 			for j in xrange(10, 110, 10):
-				output.write('%.1f ' % relevance('../data/color_feature_%d.txt' % i, '../data/imagelist.txt', i, 100, j))
+				output.write('%.1f ' % relevance('color_feature_%d.txt' % i, 'imagelist.txt', i, 100, j))
 			output.write('\n')
 		for j in xrange(10, 110, 10):
-			output.write('%.1f ' % relevance('../data/color_feature_9.txt', '../data/imagelist_9.txt', 9, 100, j))
+			output.write('%.1f ' % relevance('color_feature_9.txt', 'imagelist_9.txt', 9, 100, j))
 		output.write('\n')
 	elif sys.argv[1] == 'queries':
 		histogram()

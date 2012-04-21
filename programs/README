@@ -1,0 +1,37 @@
+INSTALLATION
+========================================================================
+
+
+
+USAGE
+========================================================================
+
+*ImageFeatureExtractorV1.py* and *ImageFeatureExtractorV2.py* are 
+implementations of two different approaches of color histogram features. 
+To use these two programs, you need to put them in the parent directory 
+of *image*. Then excuting *python ImageFeatureExtractorVx.py*, the files 
+like *color_feature_4. txt*, *imagelist_8.txt* will be generated. The 
+format of these files is identical to the format of files provided by 
+the project.
+
+*Queries.py* is used to generate the number of node access with respect 
+to the various number of features and the number of data objects inserted. 
+It also generates the correctness rate, which is defined in section 2.3 
+in the report. You need to put this file in the same directory as the 
+first two files.
+
+After excuting *python Queries.py queries*, files *problem1* and *problem2* 
+will be generated. These files contain the number of node access. The first 
+column is the number of objects inserted to the index. The next columns 
+contain the number of node access with respect to various dimension of 
+features. In *problem1*, the dimensions are 4, 8, 12, 16, 20, 27 and 64. 
+In *problem2*, we used the features provided by the project, thus the 
+dimension is 9.
+
+It is also available to execute *python Queries.py relevance*. The file 
+*problem3* will be generated, which contains the correctness rate. Each line 
+contains ten rate with respect to the 10, 20, ..., 100 nearest neighbors. 
+The eight lines are with respect to 4, 8, 12, 16, 20, 27, 64 and 9 dimension 
+of features.
+
+*Main.py* is a program that provided an interface for querying by example.

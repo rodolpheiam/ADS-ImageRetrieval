@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
+plt.figure(figsize=(16, 5))
 f = open(sys.argv[1] + '/problem3').readlines()
 y = []
 COLOR = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
