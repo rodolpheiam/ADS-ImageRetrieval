@@ -21,7 +21,7 @@ USAGE
 implementations of two different approaches of color histogram features. 
 To use these two programs, you need to put them in the parent directory 
 of *image*. Then excuting *python ImageFeatureExtractorVx.py*, the files 
-like *color_feature_4. txt*, *imagelist_8.txt* will be generated. The 
+like *color_feature_4.txt*, *imagelist_8.txt* will be generated. The 
 format of these files is identical to the format of files provided by 
 the project.
 
@@ -49,6 +49,7 @@ of features.
 provides two ways to query related images. One is to query some images (the 
 number of results can be specified) to a given image, the other is to query 
 images related to given images listed in a file. Before excuting the program, 
-you need to put this file in the parent directory of *image* together with file
-*ImageFeatureExtractor.py*. You can type "python Main.py --help" to get the
+you need to put this file in the parent directory of *image* together with 
+file *ImageFeatureExtractor.py* (which means that you need to rename the 
+first two files). You can type "python Main.py --help" to get the
 instructions of this program.
